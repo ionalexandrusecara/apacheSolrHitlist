@@ -1,0 +1,58 @@
+<html ng-app="hitlistApp">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Youtube Hitlist Player</title>
+    <link rel="stylesheet" type="text/css" href="hitlist.css"/>
+    <!-- include permitted libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.0/moment.min.js"></script>
+  </head>
+  <body>
+    <div ng-controller="hitlistCtrl">
+      <div id="header">
+        CS2003 Web1 Assignment: Youtube hitlist
+      </div>
+      <nav id="searchform">
+        <form>
+          <label for="query">Fulltext:</label>
+          <input type="search" id="query" ng-model="query" name="Search" />
+          <label for="startDate">Start Date:</label>
+          <input type="date" id="startDate" ng-model="sDate"/>
+          <label for="endDate">End Date:</label>
+          <input type="date" id="endDate" ng-model="eDate"/>
+          <label for="descriptionQuery">Description:</label>
+          <input type="search" id="descriptionQuery" ng-model="descriptionquery" name="descriptionSearch" />
+          <button id="search" type="submit" onclick="submitSearch()">Search</button>
+        </form>
+      </nav>
+      <nav id="videolist">
+      <ol id="olist">
+      </ol>
+      <li id = "foundlist">
+      </li>
+      </nav>
+      <section id="defaultContent">
+      <h1>Welcome to the CS2003 Youtube Hitlist!</h1>
+      <p>
+      Use the search fields above, then select a video from the list on the left to play it.
+      </p>
+      </section>
+      <section id="video">
+
+        <h1 id="videotitle"></h1>
+
+        <!-- youtube embed code -->
+
+        <iframe width="560" height="315" src="" id="iframe" frameborder="0" allowfullscreen>
+        </iframe>
+
+        <p id="description">
+        
+        </p>
+      </section>
+    </div>
+
+    <script src="hitlist.js"></script>
+  </body>
+</html>
